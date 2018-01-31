@@ -1,0 +1,38 @@
+/* variables */
+
+// colours
+$bright--blue: #0667d0; //highlight blue
+$dim--blue: #7d95b6;  //dim blue
+$mid-grey: #dae1e9; //mid grey
+
+
+//local fonts
+@font-face {
+    font-family: "Lato Bold";
+    src: url("/src/assets/fonts/Lato/Lato-Bold.ttf");
+}
+@font-face {
+    font-family: "Lato Regular";
+    src: url("/src/assets/fonts/Lato/Lato-Regular.ttf");
+}
+
+// typography
+$lato_bold: "Lato Bold", sans-serif;
+$lato_regular: "Lato Regular", sans-serif;
+
+
+
+
+
+// padding
+.nopadding {
+  padding: 0;
+}
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 544px,
+  md: 700px,
+  lg: 992px,
+  xl: 1200px
+) !default;

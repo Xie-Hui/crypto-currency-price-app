@@ -1,2 +1,13 @@
+//helpers
+@import 'helpers/_variables';
+
 //layout
-@import 'layout/body.scss';
+@import 'layout/_header';
+@import 'layout/_body';
+@import 'layout/_dashboard';
+@import 'layout/_footer';
+
+
+//compoents
+@import 'components/_tabs';
+@import 'components/_priceTable';

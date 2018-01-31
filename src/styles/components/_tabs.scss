@@ -1,0 +1,75 @@
+//fonts calculate
+$font--calc--tabs--large: 16px;
+$font--calc--tabs--small: 14px;
+
+.Tabs {
+  display: flex;
+  color: $dim--blue;
+  flex-direction: row;
+  font-size: $font--calc--tabs--small;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.Tabs-item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  height: inherit;
+  margin: 0 0.5em;
+  position: relative;
+  transition: all 0.25s ease;
+
+  .cryptocurrency {
+    span {
+      &:first-child {
+        font-size: $font--calc--tabs--large;
+        &:after {
+          content: " · ";
+        }
+      }
+    }
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    &:after {
+      border-bottom-color: $dim--blue;
+    }
+  }
+
+  &:after {
+    bottom: -1px;
+    border-bottom: 1px solid transparent;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  &.selected {
+    color: $bright--blue;
+    &:after {
+      bottom: -1px;
+      border-bottom: 1px solid $bright--blue;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}

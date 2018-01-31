@@ -11,19 +11,18 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const paths = {
   DIST: path.resolve(__dirname, 'dist'),
   SRC: path.resolve(__dirname, 'src'),
-  JS: path.resolve(__dirname, 'src/js'),
+  JS: path.resolve(__dirname, 'src'),
 };
 
 // Webpack configuration
 module.exports = {
-  entry: path.join(paths.JS, 'app.js'),
+  entry: path.join(paths.JS, 'index.js'),
   output: {
     path: paths.DIST,
     filename: 'app.bundle.js',
   },
   //turn on watch mode
   watch: true,
-  // Tell webpack to use html plugin -> ADDED IN THIS STEP
   // index.html is used as a template in which it'll inject bundled app.
   plugins: [
     new HtmlWebpackPlugin({
@@ -46,7 +45,7 @@ module.exports = {
           'babel-loader',
         ],
       },
-      // CSS loader to CSS files -> ADDED IN THIS STEP
+      // CSS loader to CSS files
       // Files will get handled by css loader and then passed to the extract text plugin
       // which will write it to the file we defined above
       {
@@ -56,7 +55,14 @@ module.exports = {
           use: ['css-loader',  'sass-loader']
         }),
       },
-      // File loader for image assets -> ADDED IN THIS STEP
+      //File loadar for font assets
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        use: [
+          'file-loader',
+        ],
+      },
+      // File loader for image assets
       // We'll add only image extensions, but you can things like svgs, fonts and videos
       {
         test: /\.(png|jpg|gif)$/,
@@ -75,5 +81,9 @@ module.exports = {
   // import MyComponent from './my-component.jsx';
   resolve: {
     extensions: ['.js', '.jsx'],
+    //resolve the absolute path
+    alias: {
+      src: path.resolve('./src'),
+    },
   },
 };

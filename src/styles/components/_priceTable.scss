@@ -1,0 +1,46 @@
+$price-font-size-large: 42px;
+$price-font-size-small: 28px;
+$label-font-size: 14px;
+
+.PriceTable {
+  display: flex;
+  color: $dim--blue;
+  flex-direction: row;
+  line-height: normal;
+  width: 100%;
+  padding: 1em 0.5em;
+  border-bottom: 1px solid $mid-grey;
+
+}
+
+.TableCell {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  width: 33%;
+  margin: 0.5em 0.5em;
+  position: relative;
+  transition: all 0.25s ease;
+  &:not(:first-child) {
+    border-left: 1px solid $mid-grey;
+  }
+  .value {
+    font-family: $lato-regular;
+    color: darken($dim--blue, 25%);
+    padding-bottom: 0.5em;
+    .small-font {
+      font-size: $price-font-size-small;
+    }
+    .large-font {
+      font-size: $price-font-size-large;
+    }
+  }
+  .label {
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: $label-font-size;
+  }
+
+}
