@@ -2,23 +2,23 @@
 /* variables */
 @font-face {
   font-family: "Lato Bold";
-  src: url("/src/assets/fonts/Lato/Lato-Bold.ttf"); }
+  src: url("/public/fonts/Lato/Lato-Bold.ttf"); }
 
 @font-face {
   font-family: "Lato Regular";
-  src: url("/src/assets/fonts/Lato/Lato-Regular.ttf"); }
+  src: url("/public/fonts/Lato/Lato-Regular.ttf"); }
 
 @font-face {
   font-family: "Oswald Bold";
-  src: url("/src/assets/fonts/Oswald/Oswald-Bold.ttf"); }
+  src: url("/public/fonts/Oswald/Oswald-Bold.ttf"); }
 
 @font-face {
   font-family: "Oswald Regular";
-  src: url("/src/assets/fonts/Oswald/Oswald-Regular.ttf"); }
+  src: url("/public/fonts/Oswald/Oswald-Regular.ttf"); }
 
 @font-face {
   font-family: "Oswald Light";
-  src: url("/src/assets/fonts/Oswald/Oswald-Light.ttf"); }
+  src: url("/public/fonts/Oswald/Oswald-Light.ttf"); }
 
 .nopadding {
   padding: 0; }
