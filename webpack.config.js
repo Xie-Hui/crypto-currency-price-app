@@ -84,6 +84,7 @@ module.exports = {
     //resolve the absolute path
     alias: {
       src: path.resolve('./src'),
+      public: path.resolve('./public'),
     },
   },
 };

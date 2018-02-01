@@ -104,7 +104,7 @@ class App extends Component {
     return (
       <Helmet>
         <title>{`${cryptocurrency.toUpperCase()}: ${priceText}`}</title>
-        <link rel="icon" href={`src/assets/images/icons/icon-${cryptocurrency}.png`} />
+        <link rel="icon" href={`/public/images/icons/icon-${cryptocurrency}.png`} />
       </Helmet>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from 'src/assets/images/icons/coinbase.svg';
+import logo from 'public/images/icons/coinbase.svg';
 
 const Footer = () => (
   <div className="Footer">
