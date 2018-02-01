@@ -1,8 +1,10 @@
 body {
-  background-image: linear-gradient(to bottom, darken($dim--blue, 40%), darken($dim--blue, 30%));
-  font-family: $lato_bold;
+  //background-image: linear-gradient(to bottom, lighten($dim--blue, 35%), lighten($dim--blue, 20%));
+  background-color: lighten($dim--blue, 35%);
+  font-family: $lato_regular;
   letter-spacing: 0.5px;
   font-size: 16px;
+  font-weight: 400;
   height: 100vh;
   line-height: 1.4;
   text-rendering: optimizeLegibility;
@@ -33,5 +35,16 @@ body {
   flex-direction: row;
   flex-shrink: 0;
   justify-content: space-between;
-  padding: 0 2em;
+  padding: 0 1em;
+}
+
+.chart {
+  margin: 0 2em;
+  stroke-width: 2.5px;
+  .topSection {
+    display: flex;
+    flex-direction: row;
+    height: 225px;
+    border-bottom: 1px solid $mid-grey;
+  }
 }

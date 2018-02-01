@@ -1,5 +1,6 @@
 $price-font-size-large: 42px;
 $price-font-size-small: 28px;
+$small-font-offset: -9px;
 $label-font-size: 14px;
 
 .PriceTable {
@@ -8,7 +9,7 @@ $label-font-size: 14px;
   flex-direction: row;
   line-height: normal;
   width: 100%;
-  padding: 1em 0.5em;
+  padding: 1em 0em;
   border-bottom: 1px solid $mid-grey;
 
 }
@@ -30,6 +31,8 @@ $label-font-size: 14px;
     color: darken($dim--blue, 25%);
     padding-bottom: 0.5em;
     .small-font {
+      position: relative;
+      top: $small-font-offset;
       font-size: $price-font-size-small;
     }
     .large-font {

@@ -28,4 +28,19 @@ const LOCAL_JSON_DATA_DIR = './priceData';
 // Polls the API endpoint every minute to update prices
 const POLL_FREQUENCY = 60 * 1000;
 
-export { CURRENCY, CRYPTOCURRENCY, DURATION, LOCAL_JSON_DATA_DIR, POLL_FREQUENCY };
+const DEFAULT_TICK_COUNT = 7;
+
+// `Object.values` polyfill for IE (since it's not supported by CRA)
+const DURATION_LIST = Object.keys(DURATION).map(e => DURATION[e].key);
+
+
+
+export {
+  CURRENCY,
+  CRYPTOCURRENCY,
+  DURATION,
+  LOCAL_JSON_DATA_DIR,
+  POLL_FREQUENCY,
+  DEFAULT_TICK_COUNT,
+  DURATION_LIST,
+ };

@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 
 import Tabs from 'src/components/Tabs/tabs';
 import PriceTable from 'src/components/PriceTable/priceTable';
+import VerticalChartAxis from 'src/components/ChartAxis/VerticalChartAxis';
+import HorizontalChartAxis from 'src/components/ChartAxis/HorizontalChartAxis';
+import Footer from 'src/components/Footer/Footer';
 
-import { fetchPriceHistory, fetchSpotPrices } from '../api/api';
-import { CRYPTOCURRENCY, DURATION, POLL_FREQUENCY } from '../utils/variables';
-import { formatCurrency } from '../utils/currencyFormatter';
+import PriceChart from 'src/containers/PriceChart/PriceChart';
+
+import { fetchPriceHistory, fetchSpotPrices } from 'src/api/api';
+import { CRYPTOCURRENCY, DURATION, POLL_FREQUENCY } from 'src/utils/variables';
+import { formatCurrency } from 'src/utils/currencyFormatter';
 
 import '../styles/main.scss';
 
@@ -89,7 +95,19 @@ class App extends Component {
     })
   }
 
+  renderHelmet() {
+    const { selectedCryptocurrencyIndex, spotPrices } = this.state;
+    const cryptocurrency = CRYPTOCURRENCY_LIST[selectedCryptocurrencyIndex].key;
+    const price = spotPrices[selectedCryptocurrencyIndex] || '';
+    const priceText = formatCurrency(price.amount, ACTIVE_CURRENCY) || '';
 
+    return (
+      <Helmet>
+        <title>{`${cryptocurrency.toUpperCase()}: ${priceText}`}</title>
+        <link rel="icon" href={`src/assets/images/icons/icon-${cryptocurrency}.png`} />
+      </Helmet>
+    );
+  }
 
   renderCryptocurrencyTabs() {
     const { spotPrices } = this.state;
@@ -163,16 +181,43 @@ class App extends Component {
     );
   }
 
+  renderPriceHistoryChart() {
+    const { priceHistory, selectedCryptocurrencyIndex, selectedDurationIndex } = this.state;
+    const cryptocurrency = CRYPTOCURRENCY_LIST[selectedCryptocurrencyIndex];
+    const durationType = DURATION_LIST[selectedDurationIndex].key;
+    return (
+      <div className="chart">
+        <div className="topSection">
+          <VerticalChartAxis data={priceHistory} textAlign="left" />
+          <PriceChart
+            data={priceHistory}
+            color={
+              cryptocurrency && {
+                fill: cryptocurrency.fillColor,
+                stroke: cryptocurrency.strokeColor,
+              }
+            }
+          />
+          <VerticalChartAxis data={priceHistory} textAlign="right" />
+        </div>
+        <HorizontalChartAxis data={priceHistory} duration={durationType} />
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="App">
+        { this.renderHelmet() }
         <div className="dashboard">
           <div className="tabs">
             { this.renderCryptocurrencyTabs() }
             { this.renderDurationTabs() }
           </div>
           { this.renderPriceTable() }
+          { this.renderPriceHistoryChart() }
         </div>
+        <Footer />
       </div>
     );
   }

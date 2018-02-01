@@ -1,0 +1,79 @@
+.show {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.PriceChart {
+  cursor: crosshair;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
+}
+
+.HorizontalChartAxis {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.5em 3em 1.5em;
+  .tick {
+    color: $dim--blue;
+    font-size: 14px;
+  }
+}
+
+.VerticalChartAxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.25em;
+  .tick {
+    color: $dim--blue;
+    font-size: 14px;
+  }
+}
+
+.Cursor {
+  z-index: 2;
+  .line {
+    stroke: $dim--blue;
+    stroke-width:0.5;
+  }
+  .circle {
+    stroke: $dim--blue;
+    stroke-width:2;
+    fill: white;
+  }
+}
+
+.HoverContainer {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 200px;
+  .content {
+    border-radius: 5px;
+    padding: 1px 6px;
+    background: #fff;
+    border: 1px solid $dim--blue;
+    color: $dim--blue;
+    &.invertColor {
+      background: $dim--blue;
+      border: none;
+      color: #fff;
+    }
+  }
+}

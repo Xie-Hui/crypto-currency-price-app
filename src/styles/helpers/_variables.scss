@@ -15,10 +15,26 @@ $mid-grey: #dae1e9; //mid grey
     font-family: "Lato Regular";
     src: url("/src/assets/fonts/Lato/Lato-Regular.ttf");
 }
+@font-face {
+    font-family: "Oswald Bold";
+    src: url("/src/assets/fonts/Oswald/Oswald-Bold.ttf");
+}
+@font-face {
+    font-family: "Oswald Regular";
+    src: url("/src/assets/fonts/Oswald/Oswald-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Oswald Light";
+    src: url("/src/assets/fonts/Oswald/Oswald-Light.ttf");
+}
 
 // typography
 $lato_bold: "Lato Bold", sans-serif;
 $lato_regular: "Lato Regular", sans-serif;
+$oswald_regular: "Oswald Regular", sans-serif;
+$oswald_light: "Oswald Light", sans-serif;
+
 
 
 
