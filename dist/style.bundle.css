@@ -1,5 +1,235 @@
+@charset "UTF-8";
+/* variables */
+@font-face {
+  font-family: "Lato Bold";
+  src: url("/src/assets/fonts/Lato/Lato-Bold.ttf"); }
+
+@font-face {
+  font-family: "Lato Regular";
+  src: url("/src/assets/fonts/Lato/Lato-Regular.ttf"); }
+
+@font-face {
+  font-family: "Oswald Bold";
+  src: url("/src/assets/fonts/Oswald/Oswald-Bold.ttf"); }
+
+@font-face {
+  font-family: "Oswald Regular";
+  src: url("/src/assets/fonts/Oswald/Oswald-Regular.ttf"); }
+
+@font-face {
+  font-family: "Oswald Light";
+  src: url("/src/assets/fonts/Oswald/Oswald-Light.ttf"); }
+
+.nopadding {
+  padding: 0; }
+
 body {
-  font: verdana, sans-serif;
-  background-color: #f3e2c7; }
-  body h1, body h2 {
-    color: #f3e2c7; }
+  background-color: #eff2f6;
+  font-family: "Lato Regular", sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  font-weight: 400;
+  height: 100vh;
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; }
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center; }
+
+.tabs {
+  border-bottom: 1px solid #dae1e9;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  height: 55px;
+  justify-content: space-between;
+  padding: 0 2em; }
+
+.table {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  justify-content: space-between;
+  padding: 0 1em; }
+
+.chart {
+  margin: 0 2em;
+  stroke-width: 2.5px; }
+  .chart .topSection {
+    display: flex;
+    flex-direction: row;
+    height: 225px;
+    border-bottom: 1px solid #dae1e9; }
+
+.dashboard {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 2px solid #dae1e9;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1500px;
+  min-width: 960px;
+  width: 90vw;
+  height: 470px; }
+
+.Footer {
+  text-align: center;
+  color: #7d95b6;
+  margin-top: 2em; }
+  .Footer .logo {
+    height: 1em;
+    color: #7d95b6; }
+
+.Tabs {
+  display: flex;
+  color: #7d95b6;
+  flex-direction: row;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal; }
+
+.Tabs-item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  height: inherit;
+  margin: 0 0.5em;
+  position: relative;
+  transition: all 0.25s ease; }
+  .Tabs-item .cryptocurrency span:first-child {
+    font-size: 16px; }
+    .Tabs-item .cryptocurrency span:first-child:after {
+      content: " \B7   "; }
+  .Tabs-item:first-child {
+    margin-left: 0; }
+  .Tabs-item:last-child {
+    margin-right: 0; }
+  .Tabs-item:focus {
+    outline: none; }
+  .Tabs-item:hover:after {
+    border-bottom-color: #7d95b6; }
+  .Tabs-item:after {
+    bottom: -1px;
+    border-bottom: 1px solid transparent;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%; }
+  .Tabs-item.selected {
+    color: #0667d0; }
+    .Tabs-item.selected:after {
+      bottom: -1px;
+      border-bottom: 1px solid #0667d0;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      width: 100%; }
+
+.PriceTable {
+  display: flex;
+  color: #7d95b6;
+  flex-direction: row;
+  line-height: normal;
+  width: 100%;
+  padding: 1em 0em;
+  border-bottom: 1px solid #dae1e9; }
+
+.TableCell {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  width: 33%;
+  margin: 0.5em 0.5em;
+  position: relative;
+  transition: all 0.25s ease; }
+  .TableCell:not(:first-child) {
+    border-left: 1px solid #dae1e9; }
+  .TableCell .value {
+    font-family: "Lato Regular", sans-serif;
+    color: #415673;
+    padding-bottom: 0.5em; }
+    .TableCell .value .small-font {
+      position: relative;
+      top: -9px;
+      font-size: 28px; }
+    .TableCell .value .large-font {
+      font-size: 42px; }
+  .TableCell .label {
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px; }
+
+.show {
+  opacity: 1;
+  transition: opacity 300ms; }
+
+.hidden {
+  opacity: 0;
+  transition: opacity 300ms; }
+
+.PriceChart {
+  cursor: crosshair;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 10; }
+  .PriceChart svg {
+    height: 100%;
+    width: 100%; }
+
+.HorizontalChartAxis {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.5em 3em 1.5em; }
+  .HorizontalChartAxis .tick {
+    color: #7d95b6;
+    font-size: 14px; }
+
+.VerticalChartAxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.25em; }
+  .VerticalChartAxis .tick {
+    color: #7d95b6;
+    font-size: 14px; }
+
+.Cursor {
+  z-index: 2; }
+  .Cursor .line {
+    stroke: #7d95b6;
+    stroke-width: 0.5; }
+  .Cursor .circle {
+    stroke: #7d95b6;
+    stroke-width: 2;
+    fill: white; }
+
+.HoverContainer {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 200px; }
+  .HoverContainer .content {
+    border-radius: 5px;
+    padding: 1px 6px;
+    background: #fff;
+    border: 1px solid #7d95b6;
+    color: #7d95b6; }
+    .HoverContainer .content.invertColor {
+      background: #7d95b6;
+      border: none;
+      color: #fff; }
