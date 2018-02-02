@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 /* variables */
 
 // colours
@@ -5,7 +7,7 @@ $bright--blue: #0667d0; //highlight blue
 $dim--blue: #7d95b6;  //dim blue
 $mid-grey: #dae1e9; //mid grey
 
-
+/*
 //local fonts
 @font-face {
     font-family: "Lato Bold";
@@ -15,25 +17,11 @@ $mid-grey: #dae1e9; //mid grey
     font-family: "Lato Regular";
     src: url("/public/fonts/Lato/Lato-Regular.ttf");
 }
-@font-face {
-    font-family: "Oswald Bold";
-    src: url("/public/fonts/Oswald/Oswald-Bold.ttf");
-}
-@font-face {
-    font-family: "Oswald Regular";
-    src: url("/public/fonts/Oswald/Oswald-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Oswald Light";
-    src: url("/public/fonts/Oswald/Oswald-Light.ttf");
-}
-
+*/
 // typography
 $lato_bold: "Lato Bold", sans-serif;
 $lato_regular: "Lato Regular", sans-serif;
-$oswald_regular: "Oswald Regular", sans-serif;
-$oswald_light: "Oswald Light", sans-serif;
+
 
 
 
