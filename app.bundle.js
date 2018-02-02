@@ -29411,7 +29411,7 @@ var App = function (_Component) {
           null,
           cryptocurrency.toUpperCase() + ': ' + priceText
         ),
-        _react2.default.createElement('link', { rel: 'icon', href: '/public/images/icons/icon-' + cryptocurrency + '.png' })
+        _react2.default.createElement('link', { rel: 'icon', href: './public/images/icons/icon-' + cryptocurrency + '.png' })
       );
     }
   }, {
