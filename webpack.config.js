@@ -82,9 +82,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     //resolve the absolute path
+
     alias: {
-      src: path.resolve('./src'),
-      public: path.resolve('./public'),
+      src: path.resolve(__dirname, 'src/'),
+      public: path.resolve(__dirname, 'public/'),
     },
   },
 };
